@@ -1,0 +1,14 @@
+name: ChatGPTBridge checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  macos:
+    runs-on: macos-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+      - name: Run ChatGPTBridge tests
+        run: ./tests/test-chatbridge.sh
